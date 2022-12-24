@@ -3,7 +3,7 @@
 
 <h2>Welcome to play</h2>
 
-Click here to play and enjoy - <br>
+<a href="https://tejasn09.github.io/Chess-Game-js/">Click here</a> to play and enjoy - <br>
 
 It is in developing state and needs futher more improvement,all the functions are working properly and its a multiplayer game
 where two player can challenge each other and battle<br>
