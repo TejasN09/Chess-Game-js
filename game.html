@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0;"/>
+	<title>Chess Game</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Rubik+80s+Fade&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="chess.css">
+
+</head>
+
+<body>
+
+	<h1 id="title" class="title">CHESS</h1>
+	<div id="endscene">
+		<p class="winning-sign"></p>
+		<button id="refresh" class="btn btn-primary" onclick="reload()">Restart</button>
+		<div class="overlay">
+		</div>
+	</div>
+
+	<br>
+	<div class="board-style" style="width:600px;margin:auto;position:relative;">
+
+		<div id="board" class="" mainboard>
+
+			<div id="final" class="odd">
+				<div id="81" class="square" data-square="a8">
+					<h4 class="EvenNo">8</h4><img class="piece rook" id="blackRook1" src="img/blackRook.png">
+				</div>
+				<div id="82" class="square" data-square="b8">
+					<img class="piece knight" id="blackKnight1" src="img/blackKnight.png">
+				</div>
+				<div id="83" class="square" data-square="c8">
+					<img class="piece bishop" id="blackBishop1" data-color="black" src="img/blackBishop.png">
+				</div>
+				<div id="84" class="square" data-square="d8">
+					<img class="piece bking" id="blackQueen" data-color="black" src="img/blackQueen.png">
+				</div>
+				<div id="85" class="square" data-square="e8">
+					<img class="piece bking" id="blackKing" data-color="black" src="img/blackKing.png">
+				</div>
+				<div id="86" class="square" data-square="f8">
+					<img class="piece bishop" id="blackBishop2" data-color="black" src="img/blackBishop.png">
+				</div>
+				<div id="87" class="square" data-square="g8">
+					<img class="piece bking" id="blackKnight2" data-color="black" src="img/blackKnight.png">
+				</div>
+				<div id="88" class="square" data-square="h8">
+					<img class="piece rook" id="blackRook2" src="img/blackRook.png">
+				</div>
+			</div>
+
+			<div class="even">
+				<div id="71" class="square" data-square="a7">
+					<h4 class="OddNo">7</h4>
+					<img class="piece pawn" id="blackPawn1" src="img/blackPawn.png">
+				</div>
+				<div id="72" class="square" data-square="b7">
+					<img class="piece pawn" id="blackPawn2" src="img/blackPawn.png">
+				</div>
+				<div id="73" class="square" data-square="c7">
+					<img class="piece pawn" id="blackPawn3" src="img/blackPawn.png">
+				</div>
+				<div id="74" class="square" data-square="d7">
+					<img class="piece pawn" id="blackPawn4" src="img/blackPawn.png">
+				</div>
+				<div id="75" class="square" data-square="e7">
+					<img class="piece pawn" id="blackPawn5" src="img/blackPawn.png">
+				</div>
+				<div id="76" class="square" data-square="f7">
+					<img class="piece pawn" id="blackPawn6" src="img/blackPawn.png">
+				</div>
+				<div id="77" class="square" data-square="g7">
+					<img class="piece pawn" id="blackPawn7" src="img/blackPawn.png">
+				</div>
+				<div id="78" class="square" data-square="h7">
+					<img class="piece pawn" id="blackPawn8" src="img/blackPawn.png">
+				</div>
+			</div>
+			<div class="odd">
+				<div id="61" class="square" data-square="6-a">
+					<h4 class="EvenNo">6</h4>
+				</div>
+				<div id="62" class="square" data-square="b6"></div>
+				<div id="63" class="square" data-square="c6"></div>
+				<div id="64" class="square" data-square="d6"></div>
+				<div id="65" class="square" data-square="e6"></div>
+				<div id="66" class="square" data-square="f6"></div>
+				<div id="67" class="square" data-square="g6"></div>
+				<div id="68" class="square" data-square="h6"></div>
+			</div>
+			<div class="even">
+				<div id="51" class="square" data-square="5-a">
+					<h4 class="OddNo">5</h4>
+				</div>
+				<div id="52" class="square" data-square="b5"></div>
+				<div id="53" class="square" data-square="c5"></div>
+				<div id="54" class="square" data-square="d5"></div>
+				<div id="55" class="square" data-square="e5"></div>
+				<div id="56" class="square" data-square="f5"></div>
+				<div id="57" class="square" data-square="g5"></div>
+				<div id="58" class="square" data-square="h5"></div>
+			</div>
+			<div class="odd">
+				<div id="41" class="square" data-square="4-a">
+					<h4 class="EvenNo">4</h4>
+				</div>
+				<div id="42" class="square" data-square="b4"></div>
+				<div id="43" class="square" data-square="c4"></div>
+				<div id="44" class="square" data-square="d4"></div>
+				<div id="45" class="square" data-square="e4"></div>
+				<div id="46" class="square" data-square="f4"></div>
+				<div id="47" class="square" data-square="g4"></div>
+				<div id="48" class="square" data-square="h4"></div>
+			</div>
+			<div class="even">
+				<div id="31" class="square" data-square="3-a">
+					<h4 class="OddNo">3</h4>
+				</div>
+				<div id="32" class="square" data-square="b3"></div>
+				<div id="33" class="square" data-square="c3"></div>
+				<div id="34" class="square" data-square="d3"></div>
+				<div id="35" class="square" data-square="e3"></div>
+				<div id="36" class="square" data-square="f3"></div>
+				<div id="37" class="square" data-square="g3"></div>
+				<div id="38" class="square" data-square="h3"></div>
+			</div>
+			<div class="odd">
+				<div class="square white" id="21" data-square="a2">
+					<h4 class="EvenNo">2</h4>
+					<img class="piece pawn" id="whitePawn1" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="22" data-square="b2">
+					<img class="piece pawn" id="whitePawn2" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="23" data-square="c2">
+					<img class="piece pawn" id="whitePawn3" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="24" data-square="d2">
+					<img class="piece pawn" id="whitePawn4" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="25" class="square" data-square="e2">
+					<img class="piece pawn" id="whitePawn5" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="26" data-square="f2">
+					<img class="piece pawn" id="whitePawn6" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="27" data-square="g2">
+					<img class="piece pawn" id="whitePawn7" src="img/whitePawn.png">
+				</div>
+				<div class="square white" id="28" data-square="h2">
+					<img class="piece pawn" id="whitePawn8" src="img/whitePawn.png">
+				</div>
+			</div>
+			<div class="even">
+				<div id="11" class="square white" data-square="a1">
+					<h4 class="OddNo">1</h4>
+					<h4 class="downAlphaO downAlpha-A" style="right:528px;">a</h4>
+					<img class="piece rook" id="whiteRook1" src="img/whiteRook.png">
+
+				</div>
+				<div id="12" class="square white" data-square="b1">
+					<h4 class="downAlphaE downAlpha-B" style="right: 452px;">b</h4>
+					<img class="piece knight" id="whiteKnight1" src="img/whiteKnight.png">
+				</div>
+				<div id="13" class="square white" data-square="c1">
+					<h4 class="downAlphaO downAlpha-C" style="right: 377px;">c</h4>
+					<img class="piece bishop" id="whiteBishop1" data-color="white" src="img/whiteBishop.png">
+				</div>
+				<div id="14" class="square white" data-square="d1">
+					<h4 class="downAlphaE downAlpha-D" style="right: 301px;">d</h4>
+					<img class="piece queen" id="whiteQueen" src="img/whiteQueen.png">
+				</div>
+				<div id="15" class="square white" data-square="e1">
+					<h4 class="downAlphaO downAlpha-E" style="right:228px;">e</h4>
+					<img class="piece wking" src="img/whiteKing.png" class="white" id="whiteKing">
+				</div>
+				<div id="16" class="square white" data-square="f1">
+					<h4 class="downAlphaE downAlpha-F" style="right: 153px;">f</h4>
+					<img class="piece knight" id="whiteBishop2" src="img/whiteBishop.png">
+				</div>
+				<div id="17" class="square white" data-square="g1">
+					<h4 class="downAlphaO downAlpha-G" style="right: 77px; bottom:0;">g</h4>
+					<img class="piece knight" id="whiteKnight2" src="img/whiteKnight.png">
+				</div>
+				<div id="18" class="square white" data-square="h1">
+					<h4 class="downAlphaE downAlpha-H" style="right:4px;">h</h4>
+					<img class="piece rook" id="whiteRook2" src="img/whiteRook.png">
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="mainPieces">
+			<div id="whiteMainPieces">
+				<div class="pawn"></div>
+				<div class="knight"></div>
+				<div class="bishop"></div>
+				<div class="rook"></div>
+				<div class="queen"></div>
+			</div>
+			<div id="blackMainPieces">
+				<div class="pawn"></div>
+				<div class="knight"></div>
+				<div class="bishop"></div>
+				<div class="rook"></div>
+				<div class="queen"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popUpDiv" class="container w-25" id="pawnToPromote">
+		<select id="myOption" class="form-select  h-100 w-100" aria-label="">
+			<option value="Queen">Queen</option>
+			<option value="Rook">Rook</option>
+			<option value="Knight">Knight</option>
+			<option value="Bishop">Bishop</option>
+		</select>
+
+
+	</div>
+	<div class="belowelements">
+		<div class="pieceturn">
+			<span id="turn">White's Turn</span>
+		</div>
+		<div class="allbuttons">
+			<div class="flip-style" style="position:absolute;left:20px;bottom:20px;">
+				<button class="flip-board" onclick="boardAnimate()">Flip Board</button>
+			</div>
+
+			<div class="resign">
+				<button class="resign-button" onclick="endGame()">🏳️Resign</button>
+			</div>
+		</div>
+
+		<div id="displaypreviousmoves">
+			<h5 class="allMoves">Previous Moves</h5>
+			<p id="previousmoves"></p>
+		</div>
+
+		<div class="kingchecksign">
+			<p id="checksign"></p>
+		</div>
+
+	</div>
+	<footer class="footer">
+		<p>Thanks for playing :)</p>
+	</footer>
+
+	<script type="text/javascript" src="GameLogic/AllPiecesMoves.js"></script>
+	<script type="text/javascript" src="Pieces/Pawn.js"></script>
+	<script type="text/javascript" src="Pieces/Rook.js"></script>
+	<script type="text/javascript" src="Pieces/Bishop.js"></script>
+	<script type="text/javascript" src="Pieces/Knight.js"></script>
+	<script type="text/javascript" src="Pieces/Queen.js"></script>
+	<script type="text/javascript" src="Pieces/King.js"></script>
+	<script type="text/javascript" src="GameLogic/Game.js"></script>
+
+	<script type="text/javascript">
+		document.getElementById("popUpDiv").style.display = "none";
+
+		function boardAnimate() {
+			const board = document.getElementById('board');
+			const elements = board.getElementsByClassName('piece');
+			if (board.classList.contains('animate')) {
+				board.classList.remove('animate');
+				board.classList.add('animate-backward');
+				for (element of elements) {
+					element.classList.remove('forward');
+					element.classList.add('backward');
+				}
+			}
+			else {
+				board.classList.remove('animate-backward');
+				board.classList.add('animate');
+				for (element of elements) {
+					element.classList.remove('backward');
+					element.classList.add('forward');
+				}
+			}
+		}
+
+		function endGame() {
+			let t = document.getElementById("turn").innerHTML;
+			console.log(t);
+			const endScene = document.getElementById('endscene');
+			if (t == "White's Turn") {
+				endScene.getElementsByClassName('winning-sign')[0].innerHTML = "<span>Black" + " Win's" + "</span>" + "<br />" + "Please Restart the game and enjoy";
+				endScene.classList.add('show')
+			} else {
+				endScene.getElementsByClassName('winning-sign')[0].innerHTML = "<span>White" + " Win's" + "</span>" + "<br />" + "Please Restart the game and enjoy";
+				endScene.classList.add('show')
+			}
+		}
+		function reload() {
+			location.reload();
+		}
+
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</body>
+
+</html>
