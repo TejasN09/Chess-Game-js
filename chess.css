@@ -523,10 +523,9 @@ span {
 		background-color: #000;
 		padding: 3rem 3rem 3rem 3rem;
 	}
-
+	
 	.downAlphaE {
 		font-size: 2.5rem;
-		right: 0vw !important;
 	}
 	
 	.EvenNo {
@@ -539,47 +538,65 @@ span {
 
 	.downAlphaO {
 		font-size: 2.5rem;
-		right: 0vw !important;
+		bottom: unset;
+		padding: unset;
+		margin: unset;
 	} 
-
+	
 	.downAlpha-A{
-		top: 173vh;
-		right: 69vw !important;
+		right: unset !important;
+		padding-left: 28vw;
+		padding-top: 14vh;
+		bottom: unset !important;
 	}
 
 	.downAlpha-B{
-		top: 173vh;
-		right: 34.5vw !important;
+		right: unset !important;
+		padding-left: 28vw;
+		padding-top: 14vh;
+		bottom: unset;
 	}
 
 	.downAlpha-C{
-		top: 173vh;
-		right: 1.5vw !important;
+		right: unset !important;
+		padding-top: 14vh;
+		bottom: unset;
+		padding-left: 28vw;
 	}
 
 	.downAlpha-D{
-		top: 173vh;
-		right: -31vw !important;
+		right: unset !important;
+		padding-top: 14vh;
+		bottom: unset;
+		padding-left: 28vw;
 	}
 
 	.downAlpha-E{
-		top: 173vh;
-		right: -64vw !important;
+		right: unset !important;
+		padding-top: 14vh;
+		padding-left: 28vw;
+		bottom: unset;
 	}
 
 	.downAlpha-F{
-		top: 173vh;
-		right: -97vw !important;
+		right: unset !important;
+		padding-top: 14vh;
+		padding-left: 28vw;
+		bottom: unset;
 	}
 
 	.downAlpha-G{
-		top: 173vh;
-		right: -130vw !important;
+		right: unset !important;
+		padding-top: 14vh;
+		padding-left: 28vw;
+		bottom: unset !important;
 	}
 
 	.downAlpha-H{
-		top: 173vh;
-		right: -163vw !important;
+		right: unset !important;
+		padding-top: 14vh;
+		padding-left: 28vw;
+		bottom: unset;
 	}
 
 	#displaypreviousmoves {
@@ -659,11 +676,6 @@ span {
 		font-size: 5rem;
 		font-weight: bold;
 		margin-bottom: 0;
-	}
-
-	.pieceturn {
-		position: relative;
-		margin: auto;
 	}
 
 	.overlay {
@@ -790,6 +802,10 @@ span {
 		margin-bottom: 0;
 	}
 
+	#mainPieces img{
+		display: none;
+	}
+	
 	.belowelements {
 		display: flex;
 		flex-wrap: wrap;
