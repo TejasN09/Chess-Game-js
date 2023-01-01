@@ -296,6 +296,8 @@ class GameMain {
 		let turn = this.turn;
 		let turnid = document.getElementById("checksign");
 		let previousMoves = document.getElementById("previousmoves");
+		const WkingBackgroundColor = document.getElementById("whiteKing");
+		const BkingBackgroundColor = document.getElementById("blackKing");
 		square = square || e.target;
 		if (square.classList.contains("allowed")) {
 			const clickedPiece = this.clickedPiece;
@@ -321,6 +323,14 @@ class GameMain {
 				square.append(clickedPiece.img);
 				this.clearSquare();
 				this.changeTurn();
+				if (!this.kingChecked(this.turn)) {
+					if (turn == 'white') {
+						WkingBackgroundColor.classList.remove("kingcheckcolor");
+					}
+					else {
+						BkingBackgroundColor.classList.remove("kingcheckcolor");
+					}
+				}
 				if (this.kingChecked(this.turn)) {
 					if (this.king_dead(this.turn)) {
 						this.checkmate(clickedPiece.color);
@@ -331,12 +341,14 @@ class GameMain {
 							setTimeout(function () {
 								turnid.innerHTML = "";
 							}, 3000);
+							BkingBackgroundColor.classList.add("kingcheckcolor");
 
 						} else {
 							turnid.innerHTML = "White: your king is checked";
 							setTimeout(function () {
 								turnid.innerHTML = "";
 							}, 3000);
+							WkingBackgroundColor.classList.add("kingcheckcolor");
 						}
 					}
 				}
