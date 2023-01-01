@@ -369,6 +369,9 @@ li {
 	bottom: 20px;
 }
 
+.kingcheckcolor{
+	background: rgb(185, 36, 36) !important;
+}
 
 span {
 	font-weight: bolder;
